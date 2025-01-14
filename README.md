@@ -7,6 +7,12 @@ Adiciona o projeto laravel `laravel-app` no container DOCKER.
 - Docker instalado
 - Docker Compose instalado
 
+## **Preparar o Projeto `laravel-app`
+
+Antes de contruir e subir os containers, acesse o diretório `laravel-app` e execute o que está descrito no arquivo `laravel-app/README.md`.
+
+Teste a aplicação `laravel-app` localmente, se tudo estiver funcionando, então siga com as instruções para Contruir e Subir os Containers DOCKER.
+
 ## **Como Rodar os Containers**
 
 ### **Construir e Subir os Containers**
