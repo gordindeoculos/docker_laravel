@@ -128,17 +128,41 @@ Para rodar em segundo plano:
 docker-compose up -d
 ```
 
-### **4.2 Parar containers com Docker Compose**
+### **4.2 Parar os containers com Docker Compose**
+
+Para apenas **parar** os containers sem removê-los, você pode usar o comando `docker-compose stop`.
+
+### Exemplo:
+
+```bash
+docker-compose stop
+```
+
+Isso irá parar **todos os containers** definidos no seu `docker-compose.yml`, mas **não removerá** os containers, redes ou volumes.
+
+### 4.3 Para iniciar novamente os containers, basta usar:
+
+```bash
+docker-compose start
+```
+
+Isso iniciará os containers que foram parados sem afetar a configuração deles.
+
+#### Diferença entre `docker-compose stop` e `docker-compose down`:
+- **`docker-compose stop`**: Apenas para os containers, mantendo a configuração e os dados (eles podem ser reiniciados com `docker-compose start`).
+- **`docker-compose down`**: Para e remove containers, redes e pode remover volumes (se especificado).
+
+### **4.4 Parar e remover os containers com Docker Compose**
 ```bash
 docker-compose down
 ```
 
-### **4.3 Visualizar logs do Docker Compose**
+### **4.5 Visualizar logs do Docker Compose**
 ```bash
 docker-compose logs
 ```
 
-### **4.4 Verificar o status dos containers do Docker Compose**
+### **4.6 Verificar o status dos containers do Docker Compose**
 ```bash
 docker-compose ps
 ```

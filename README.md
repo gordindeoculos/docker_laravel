@@ -25,14 +25,6 @@ docker-compose up --build -d
 
 O parâmetro `-d` faz com que os containers sejam executados em segundo plano.
 
-### **Verificar os Logs do Container**
-
-Use o comando abaixo para visualizar os logs do container `apache-laravel`:
-
-```bash
-docker-compose logs -f apache-laravel
-```
-
 ### **Acessar o Bash do Container Laravel**
 
 Para acessar o bash do container `laravel-app`, execute o seguinte comando:
@@ -73,6 +65,14 @@ Você verá a aplicação Laravel em funcionamento.
 
 ## **Comandos Docker Úteis**
 
+### **Verificar os Logs do Container**
+
+Use o comando abaixo para visualizar os logs do container `apache-laravel`:
+
+```bash
+docker-compose logs -f apache-laravel
+```
+
 ### **Verificar Containers em Execução**
 
 O comando `docker ps` lista todos os containers em execução no momento. Para ver informações sobre os containers ativos, use:
@@ -112,6 +112,30 @@ docker start <nome_do_container>
 ```
 
 Substitua `<nome_do_container>` pelo nome do container que você deseja iniciar.
+
+### Parar os containers com Docker Compose
+
+Para apenas **parar** os containers sem removê-los, você pode usar o comando `docker-compose stop`.
+
+### Exemplo:
+
+```bash
+docker-compose stop
+```
+
+Isso irá parar **todos os containers** definidos no seu `docker-compose.yml`, mas **não removerá** os containers, redes ou volumes.
+
+### Para iniciar novamente os containers, basta usar:
+
+```bash
+docker-compose start
+```
+
+Isso iniciará os containers que foram parados sem afetar a configuração deles.
+
+#### Diferença entre `docker-compose stop` e `docker-compose down`:
+- **`docker-compose stop`**: Apenas para os containers, mantendo a configuração e os dados (eles podem ser reiniciados com `docker-compose start`).
+- **`docker-compose down`**: Para e remove containers, redes e pode remover volumes (se especificado).
 
 ### **Parar e Remover os Containers**
 
